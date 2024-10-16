@@ -1,0 +1,92 @@
+{
+  "courses": [
+    {
+      "id": "_iL775j",
+      "name": "Schnuppertauchen",
+      "instructor": "Maximilian Tiefgang",
+      "dates": [
+        {
+          "begin": "2024-11-13T17:00:00",
+          "end": "2024-11-13T19:00:00"
+        },
+        {
+          "begin": "2024-11-14T17:00:00",
+          "end": "2024-11-14T19:00:00"
+        }
+      ],
+      "eventLocationId": 1
+    },
+    {
+      "id": "_iL775i",
+      "name": "Reiten",
+      "instructor": "Cowboy Tim",
+      "dates": [
+        {
+          "begin": "2024-11-13T17:00:00",
+          "end": "2024-11-13T19:00:00"
+        },
+        {
+          "begin": "2024-11-14T17:00:00",
+          "end": "2024-11-14T19:00:00"
+        }
+      ],
+      "eventLocationId": 2
+    },
+    {
+      "id": "_iL775a",
+      "name": "Yoga",
+      "instructor": "Manuela Ganzentspannt",
+      "dates": [
+        {
+          "begin": "2024-11-13T17:00:00",
+          "end": "2024-11-13T19:00:00"
+        },
+        {
+          "begin": "2024-11-14T17:00:00",
+          "end": "2024-11-14T19:00:00"
+        }
+      ],
+      "eventLocationId": 3
+    }
+  ],
+  "eventLocations": [
+    {
+      "id": 1,
+      "name": "Schwimmbad Kleines Wien",
+      "address": "Schwimmbadgasse 21, 1220 Wien",
+      "venueByPublicTansport": true
+    },
+    {
+      "id": 2,
+      "name": "Reitclub Amstetten",
+      "address": "Galoppstrecke 1, 3300 Amstetten",
+      "venueByPublicTansport": false
+    },
+    {
+      "id": 3,
+      "name": "Yogastudio Ruheoase",
+      "address": "Schwimmbadgasse 21, 1220 Wien",
+      "venueByPublicTansport": true
+    }
+  ],
+  "registrations": [
+    {
+      "id": 1,
+      "name": "Testuser",
+      "birthdate": "2024-11-13",
+      "courseId": "_iL775j"
+    },
+    {
+      "name": "Julia Schabasser",
+      "courseId": "_iL775i",
+      "birthdate": "1995-02-23",
+      "id": 2
+    },
+    {
+      "name": "Julia Schabasser",
+      "courseId": "_iL775a",
+      "birthdate": "1995-02-23",
+      "id": 3
+    }
+  ]
+}
