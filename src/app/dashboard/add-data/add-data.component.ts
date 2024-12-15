@@ -13,12 +13,14 @@ import { MatSelect } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../../shared/shared.module';
 import { MatOption } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @Component({
   selector: 'app-add-data',
   standalone: true,
   imports: [
+    MatCheckboxModule,
     SharedModule,
     MatOption,
     MatFormField,
@@ -47,7 +49,9 @@ export class AddDataComponent implements OnInit {
     this.registrationForm = this.formbuilder.group({
       name: ['', [Validators.required]],
       courseId: ['', Validators.required],
-      birthdate: [null, Validators.required]
+      birthdate: [null, Validators.required],
+      email: ['', Validators.required, Validators.email],
+      newsletter: [false]
     });
 
     // Fetch the list of courses
@@ -57,7 +61,9 @@ export class AddDataComponent implements OnInit {
   onSubmit() {
     if (this.registrationForm.valid) {
       console.log('Form Submitted:', this.registrationForm.value);
+      this.registrationForm.patchValue({birthdate:(this.registrationForm.value.birthdate as Date).toISOString().split("T")[0]});
       this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
+      this.registrationForm.reset();
     }
   }
 }

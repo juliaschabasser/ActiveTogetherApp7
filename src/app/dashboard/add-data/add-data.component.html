@@ -34,6 +34,23 @@
         Kurs ist erforderlich.
       </mat-error>
     </mat-form-field>
+
+     <!-- Email Input -->
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" formControlName="email" type="email" />
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+      Email ist erforderlich.
+    </mat-error>
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+      Bitte eine gültige Email-Adresse eingeben.
+    </mat-error>
+  </mat-form-field>
+
+    <!-- Newsletter Checkbox -->
+  <mat-checkbox formControlName="newsletter">
+    Möchten Sie den Newsletter für neue Kursangebote erhalten?
+  </mat-checkbox>
   
     <!-- Submit Button -->
     <div class="form-actions">

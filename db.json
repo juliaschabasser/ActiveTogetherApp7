@@ -105,6 +105,31 @@
       "courseId": "_iL775a",
       "birthdate": "1123-01-01T00:00:00.000Z",
       "id": 6
+    },
+    {
+      "name": "Tobi",
+      "courseId": "_iL775a",
+      "birthdate": "2024-12-09",
+      "id": 7
+    },
+    {
+      "name": "Gloria",
+      "courseId": "_iL775i",
+      "birthdate": "2024-11-30",
+      "id": 8
+    },
+    {
+      "name": "Gloria",
+      "courseId": "_iL775a",
+      "birthdate": "2024-12-16",
+      "id": 9
+    },
+    {
+      "name": "Glori",
+      "courseId": "_iL775j",
+      "birthdate": "2024-12-02",
+      "newsletter": true,
+      "id": 10
     }
   ]
 }
