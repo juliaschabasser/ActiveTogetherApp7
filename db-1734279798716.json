@@ -87,24 +87,6 @@
       "courseId": "_iL775a",
       "birthdate": "1995-02-23",
       "id": 3
-    },
-    {
-      "name": "Test",
-      "courseId": "_iL775i",
-      "birthdate": "1123-01-01T00:00:00.000Z",
-      "id": 4
-    },
-    {
-      "name": "Test2",
-      "courseId": "_iL775i",
-      "birthdate": "1123-01-01T00:00:00.000Z",
-      "id": 5
-    },
-    {
-      "name": "Test2",
-      "courseId": "_iL775a",
-      "birthdate": "1123-01-01T00:00:00.000Z",
-      "id": 6
     }
   ]
 }

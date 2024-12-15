@@ -1,0 +1,50 @@
+/* registration-form styles */
+.registration-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Styling for form fields */
+  .form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for error messages */
+  mat-error {
+    font-size: 14px;
+    color: #e74c3c;
+  }
+  
+  /* Form action styles (submit button) */
+  .form-actions {
+    text-align: center;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust form layout */
+  mat-label {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  input, select {
+    font-size: 14px;
+  }
+  
+
