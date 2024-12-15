@@ -1,6 +1,5 @@
 <div class="container mt-5">
-  <!-- Erste Row: Formular -->
-  <div class="row justify-content-center mb-5">
+   <div class="row justify-content-center mb-5">
     <div class="col-12 col-md-10">
       <form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="form-container">
         <h2>Zum Kurs anmelden!</h2>
@@ -20,10 +19,10 @@
         <!-- Course Selection -->
         <mat-form-field appearance="fill" class="form-field">
           <mat-label>Kurs auswählen</mat-label>
-          <mat-select formControlName="courseId">
+          <mat-select id="courseId" formControlName="courseId" required>
             <mat-option value="" disabled>Bitte auswählen</mat-option>
             <mat-option *ngFor="let course of storeService.courses" [value]="course.id">
-              {{ course.name }} - {{ course.instructor }}
+              {{ course.name }}
             </mat-option>
           </mat-select>
         </mat-form-field>

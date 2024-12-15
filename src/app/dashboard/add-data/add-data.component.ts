@@ -2,10 +2,14 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from '@angular/forms';
 import {StoreService} from '../../shared/store.service';
 import {BackendService} from '../../shared/backend.service';
-import {MatInputModule} from "@angular/material/input";
+import {MatFormField, MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import {MatButtonModule} from "@angular/material/button";
+import {NgForOf} from "@angular/common";
+import {MatLabel} from "@angular/material/form-field";
+import {MatOption} from "@angular/material/core";
+
 
 @Component({
   selector: 'app-add-data',
@@ -16,7 +20,11 @@ import {MatButtonModule} from "@angular/material/button";
     MatInputModule,
     MatSelectModule,
     MatCheckboxModule,
-    MatButtonModule
+    MatButtonModule,
+    NgForOf,
+    MatLabel,
+    MatOption,
+    MatFormField
   ],
   styleUrls: ['./add-data.component.css']
 })
@@ -35,7 +43,8 @@ export class AddDataComponent implements OnInit {
     this.registrationForm = this.formBuilder.group({
       name: ['', [Validators.required]],
       courseId: ['', Validators.required],
-      birthdate: [null, Validators.required]
+      birthdate: [null, Validators.required],
+      newsletter: [false]
     })
   }
 

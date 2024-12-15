@@ -1,4 +1,6 @@
-<table>
+<div class="container">
+
+<div class="row mt-2"><table>
     <thead>
         <tr>
             <th>Kurs</th>
@@ -26,7 +28,8 @@
         </tr>
       </tbody>
 </table>
-
+</div>
+<div class="row mt-2">
 <table>
     <thead>
         <tr>
@@ -43,4 +46,6 @@
         </tr>
       </tbody>
 </table>
+</div>
 <button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button" *ngFor="let page of returnAllPages()">{{page}}</button>
+</div>
