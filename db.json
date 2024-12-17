@@ -87,6 +87,34 @@
       "courseId": "_iL775a",
       "birthdate": "1995-02-23",
       "id": 3
+    },
+    {
+      "name": "Marcel",
+      "courseId": "_iL775j",
+      "birthdate": "1992-11-26",
+      "newsletter": true,
+      "id": 4
+    },
+    {
+      "name": "Marcel",
+      "courseId": "_iL775i",
+      "birthdate": "1992-11-26",
+      "newsletter": true,
+      "id": 5
+    },
+    {
+      "name": "a",
+      "courseId": "_iL775j",
+      "birthdate": "1911-01-01",
+      "newsletter": true,
+      "id": 6
+    },
+    {
+      "name": "Marcel",
+      "courseId": "_iL775i",
+      "birthdate": "1981-11-15",
+      "newsletter": true,
+      "id": 7
     }
   ]
 }

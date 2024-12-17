@@ -3,7 +3,46 @@
 }
 
 img {
-    width: 100%;
-    height: auto;
-    max-width: 200px;
+  width: 100%;
+  height: 5cm;
+  max-width: none;
+  border-radius: 25px;
+  position: relative;
+  object-fit: cover;
+  display: block;
+
 }
+
+h1 {
+  color: #ffd700;
+  margin: auto;
+  text-align: center;
+  text-shadow: 3px 4px black;
+  font-family: "Lucida Handwriting";
+}
+
+
+.button-link {
+  text-decoration: none;
+  color: white;
+  background-color: #187f18;
+  padding: 10px 20px;
+  border-radius: 25px;
+  border: none;
+  margin: 10px 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.button-link:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.button-link:active {
+  background-color: #004080;
+  transform: translateY(0);
+}
+
+

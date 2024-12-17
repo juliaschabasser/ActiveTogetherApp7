@@ -1,6 +1,7 @@
 <div>
     <h1>{{ title }}</h1>
-    <img src={{imagePath}}>&nbsp;&nbsp;
-    <a [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
-    <a [routerLink]="['/about']">About</a>
+    <img src={{imagePath}}>&nbsp;
+    <button type="button" [routerLink]="['/dashboard']" class="button-link">Dashboard</button>
+    <button type="button" [routerLink]="['/about']" class="button-link">About</button>
 </div>
+

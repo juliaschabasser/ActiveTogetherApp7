@@ -1,3 +1,23 @@
 button.active {
-    background-color: orange;
+  background-color: orange;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+.table th, .table td {
+  vertical-align: middle;
+  text-align: center;
+}
+
+
+h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+
+.mt-4 {
+  margin-top: 1.5rem !important;
 }
