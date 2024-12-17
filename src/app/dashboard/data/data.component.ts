@@ -8,7 +8,7 @@ import { BackendService } from '../../shared/backend.service';
   standalone: true,
   imports: [SharedModule],
   templateUrl: './data.component.html',
-  styleUrl: './data.component.css'
+  styleUrls: ['./data.component.css']
 })
 export class DataComponent {
 
@@ -16,19 +16,18 @@ export class DataComponent {
 
   public page: number = 0;
 
-  selectPage(i: any) {
-    let currentPage = i;
+  selectPage(i: number) {
+    this.page = i;
     this.storeService.currentPage = i;
-    this.backendService.getRegistrations(currentPage);
+    this.backendService.getRegistrations(i);
   }
 
   public returnAllPages() {
-    var pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
-    let res = [];
+    const pagesCount = Math.ceil(this.storeService.registrationTotalCount / 2);
+    const res: number[] = [];
     for (let i = 0; i < pagesCount; i++) {
-        res.push(i + 1);
-      }
+      res.push(i + 1);
+    }
     return res;
   }
-
 }
