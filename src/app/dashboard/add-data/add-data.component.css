@@ -48,3 +48,15 @@
   }
   
 
+/* When the modal is visible, we use the 'show' class to set display to block */
+.modal.show {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.5); /* Optional: adds a background overlay */
+}
+
+/* Ensure the modal content is properly centered */
+.modal-dialog {
+  position: relative;
+  top: 25%;
+}
+

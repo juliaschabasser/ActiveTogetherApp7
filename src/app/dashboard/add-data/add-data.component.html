@@ -4,9 +4,15 @@
     <!-- Name Input -->
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Name" formControlName="name" />
+      <input matInput placeholder="Name" formControlName="name" required minlength="2" maxlength="100" />
       <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
         Name ist erforderlich.
+      </mat-error>
+      <mat-error *ngIf="registrationForm.get('name')?.hasError('minlength')">
+        Der Name muss mindestens 2 Zeichen lang sein.
+      </mat-error>
+      <mat-error *ngIf="registrationForm.get('name')?.hasError('maxlength')">
+        Der Name darf maximal 100 Zeichen lang sein.
       </mat-error>
     </mat-form-field>
   
@@ -59,4 +65,24 @@
       </button>
     </div>
   </form>
+
+  <!-- Modal -->
+  <div class="modal fade" id="successfulRegistration" tabindex="-1" role="dialog" 
+  [ngClass]="{'show': isModalVisible}" 
+  (click)="closeModal()" *ngIf="isModalVisible">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erfolgreiche Registrierung</h5>
+      </div>
+      <div class="modal-body">
+        <p>Sie haben sich erfolgreich zum Kurs angemeldet!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Schließen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   

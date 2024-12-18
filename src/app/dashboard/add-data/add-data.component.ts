@@ -15,7 +15,6 @@ import { SharedModule } from '../../shared/shared.module';
 import { MatOption } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
-
 @Component({
   selector: 'app-add-data',
   standalone: true,
@@ -36,13 +35,14 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
   styleUrls: ['./add-data.component.css']
 })
 export class AddDataComponent implements OnInit {
+  public registrationForm: any;
+  isModalVisible: boolean = false;
+
   constructor(
     private formbuilder: FormBuilder, 
     public storeService: StoreService, 
     private backendService: BackendService
   ) { }
-
-  public registrationForm: any;
 
   ngOnInit(): void {
     // Initialize the form group
@@ -64,6 +64,13 @@ export class AddDataComponent implements OnInit {
       this.registrationForm.patchValue({birthdate:(this.registrationForm.value.birthdate as Date).toISOString().split("T")[0]});
       this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
       this.registrationForm.reset();
+
+      this.isModalVisible = true;
+      
     }
+  }
+
+  closeModal(){
+    this.isModalVisible = false;
   }
 }
