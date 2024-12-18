@@ -1,3 +1,97 @@
+/*Button-Styling*/
 button.active {
-    background-color: orange;
+    background-color: orange; /*Button has an orange background*/
+    color: white; /*Text color is white*/
+    border-radius: 30px; /*Button has rounded corners*/
+    padding: 5px 10px; /*Padding inside the button*/
+    transition: background-color 0.3s ease; /*When button is clicked, background color will change in 0.3 seconds*/
 }
+
+/*Desktop-Design (for large screens min-width 992px)*/
+@media (min-width: 992px) {
+    /* The container should occupy only 10 out of 12 columns, centered horizontally */
+    .row {
+        display: flex; /*Makes the row a flex container*/
+        justify-content: center; /* Center the row content horizontally */
+    }
+
+    .col-lg-10 {
+        width: 83.33%; /* 10 columns of the 12-column grid (10/12 = 83.33%) */
+    }
+
+    /* Ensuring the rows are vertically centered with a specific height */
+    .row {
+        height: 200px; /* Defined height*/
+        align-items: center; /* Content centered vertically */
+    }
+}
+
+/*Mobile-Design (for small screens max-width 576px)*/
+@media only screen and (max-width: 576px) {
+    /* Full 12-column width for mobile layout */
+    .col-12 {
+        width: 100%; /*Takes up full width */
+        padding: 1rem; /*Padding inside the column*/
+        background-color: #f5f5f5; /*Light grey background*/
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /*Shadow*/
+        border-radius: 8px; /*Rounded corners*/
+        box-sizing: border-box;
+    }
+
+    /* Table Styling */
+    .table {
+        width: 100%; /*Takes up full width*/
+        border-collapse: separate; /*Keeps table borders seperate*/
+        border-spacing: 0 5px; /*Adds space between rows*/
+    }
+
+    thead {
+        display: none; /* Hide headers on mobile */
+    }
+
+    tr {
+        display: flex; /*Rows use flexbox*/
+        flex-direction: column; /* Stack the cells vertically */
+        background-color: #fff; /*White background for each row*/
+        margin-bottom: 5vw; /*Space between rows*/
+        border: 1px solid #ddd; /*Light border between rows*/
+        border-radius: 6px; /*Round corners for each row*/
+        overflow: hidden; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15); /*Soft shadown for each row*/
+    }
+
+    td {
+        display: flex; /*Makes table cells behave like flex containers */
+        align-items: center; /*Vertically centers the content in the cells */
+        padding: 1rem 1.5rem;
+        font-size: 4vw;  /*Makes the text size responsive to the screen size */
+        line-height: 1.4; /*Line spacing*/
+        border-bottom: 1px solid #e1e1e1; /*Light border below cells */
+        text-align: left; /*Aligns the text to the left */
+        position: relative; /*Allows positioning inside the cell */
+    }
+    }
+    td:last-child {
+        border-bottom: none;
+    }
+
+    td::before {
+        content: attr(data-table); /*Adds a label before each cell */
+        font-weight: bold; /*Makes the label text bold */
+        color: #555;/*Dark gray color for the label */
+        margin-right: 1rem; /*Adds space between the label and the content */
+        text-transform: capitalize;  /*Capitalizes the first letter of the label */
+        flex-shrink: 0; /*Prevents the label from shrinking */
+    }
+    
+
+    tbody tr td {
+        text-align: left;
+        color: #333;
+    }
+
+    .container {
+        margin-top: 2rem; /*Adds space above the container */
+        padding: 1rem; /*Adds padding inside the container */
+    }
+

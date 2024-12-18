@@ -5,5 +5,7 @@ export interface Registration {
     name: string;
     birthdate: string,
     course: Course,
-    courseId: number
+    courseId: number,
+    email: string,
+    newsletter: boolean
   }
