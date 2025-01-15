@@ -74,5 +74,12 @@
   margin-left: auto; 
   margin-right: auto;
 }
+.data-processing-info {
+  font-size: 14px;
+  color: #6c757d; /* Dezentes Grau */
+  margin-top: 15px;
+  text-align: center;
+}
+
 
 

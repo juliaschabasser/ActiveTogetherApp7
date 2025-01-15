@@ -173,6 +173,14 @@
       "email": "Lara@gmail.com",
       "newsletter": false,
       "id": 23
+    },
+    {
+      "name": "Katharina Brunner",
+      "courseId": "_iL775a",
+      "birthdate": "2025-01-04",
+      "email": "Katharina.Berger@gmx.at",
+      "newsletter": true,
+      "id": 24
     }
   ]
 }
