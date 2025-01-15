@@ -73,23 +73,17 @@ export class AddDataComponent implements OnInit {
 
     onSubmit() {
       if (this.registrationForm.valid) {
-        // Extrahiere die Werte aus dem Formular
         const { name, email, courseId, birthdate } = this.registrationForm.value;
     
-        // Duplikatsprüfung
         this.backendService.checkDuplicateRegistration(name, email, courseId).subscribe(
           (isDuplicate) => {
             if (isDuplicate) {
-              // Fehlermeldung anzeigen, wenn ein Duplikat gefunden wurde
               this.errorMessage = 'Sie sind bereits für diesen Kurs angemeldet.';
             } else {
-              // Geburtsdatum formatieren
               this.registrationForm.patchValue({ birthdate: (birthdate as Date).toISOString().split("T")[0] });
-    
-              // Anmeldung speichern
+  
               this.backendService.addRegistration(this.registrationForm.value, this.storeService.currentPage);
     
-              // Formular zurücksetzen und Modal anzeigen
               this.errorMessage = null;
               this.registrationForm.reset();
               this.isModalVisible = true;

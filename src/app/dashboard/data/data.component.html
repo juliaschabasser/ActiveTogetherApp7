@@ -9,18 +9,18 @@
             <th>Kurs</th>
             <th>Veranstaltungsort</th>
             <th>Adresse des Veranstaltungsortes</th>
-            <th>Öffentlich erreichbar?</th>
-            <th>Kursleiter</th>
-            <th>Alle Termine</th>
+            <th>Öffentliche Erreichbarkeit</th>
+            <th>Kursleiter/in</th>
+            <th>Terminübersicht</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let course of storeService.courses">
-            <td data-table="Kurs:">{{course.name}}</td>
+            <td data-table="Kursbezeichnung:">{{course.name}}</td>
             <td data-table="Veranstaltungsort:">{{course.eventLocation.name}}</td>
             <td data-table="Adresse:">{{course.eventLocation.address}}</td>
             <td data-table="Öffentlich erreichbar?">{{course.eventLocation.venueByPublicTansport == true ? "Ja" : "Nein"}}</td>
-            <td data-table="Kursleiter:">{{course.instructor}}</td>
+            <td data-table="Name Kursleiter/in:">{{course.instructor}}</td>
             <td data-table="Alle Termine:">
               <br><br>
               <ul>
@@ -39,10 +39,10 @@
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
-            <th>Name</th>
+            <th>Teilnehmer/in</th>
             <th>Geburtsdatum</th>
-            <th>Kurs</th>
-            <th>Email</th>
+            <th>Gewählter Kurs</th>
+            <th>E-Mail</th>
             <th>Newsletter</th>
           </tr>
         </thead>
@@ -50,9 +50,9 @@
           <tr *ngFor="let registration of storeService.registrations">
             <td data-table="Name:">{{registration.name}}</td>
             <td data-table="Geburtsdatum:">{{registration.birthdate}}</td>
-            <td data-table="Kurs:">{{registration.course.name}}</td>
+            <td data-table="Kursbezeichnung:">{{registration.course.name}}</td>
             <td data-table="Email:">{{registration.email}}</td>
-            <td data-table="Newsletter erhalten?">{{registration.newsletter == true ? "Ja" : "Nein"}}</td>
+            <td data-table="Newsletter abonniert?">{{registration.newsletter == true ? "Ja" : "Nein"}}</td>
           </tr>
         </tbody>
       </table>
