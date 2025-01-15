@@ -25,8 +25,8 @@
               <br><br>
               <ul>
                 <li *ngFor="let date of course.dates">
-                  <span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a"}}</span> -
-                  <span>{{date.end | date:"MMM dd, yyyy 'um' hh:mm a"}}</span>
+                  <span>{{ date.begin | date:'dd. MMM yyyy, HH:mm' }}</span> -
+                  <span>{{ date.end | date:'HH:mm' }}</span>
                 </li>
               </ul>
             </td>
