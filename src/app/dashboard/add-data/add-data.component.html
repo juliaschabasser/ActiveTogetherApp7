@@ -66,6 +66,10 @@
     </div>
   </form>
 
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
   <!-- Modal -->
   <div class="modal fade" id="successfulRegistration" tabindex="-1" role="dialog" 
   [ngClass]="{'show': isModalVisible}" 

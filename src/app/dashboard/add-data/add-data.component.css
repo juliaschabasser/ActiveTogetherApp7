@@ -60,3 +60,19 @@
   top: 25%;
 }
 
+.error-message {
+  color: red;
+  font-size: 16px; /* Leicht verkleinert */
+  font-weight: bold; 
+  margin-bottom: 15px;
+  text-align: center;
+  border: 1px solid red; /* Dünnerer Rahmen */
+  padding: 8px; /* Etwas weniger Innenabstand */
+  border-radius: 4px; /* Leicht abgerundete Ecken */
+  background-color: #ffe6e6; /* Heller roter Hintergrund bleibt */
+  width: fit-content; /* Passt sich der Textbreite an */
+  margin-left: auto; /* Zentriert das Element */
+  margin-right: auto;
+}
+
+
