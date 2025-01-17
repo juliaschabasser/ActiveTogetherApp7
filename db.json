@@ -1,9 +1,9 @@
 {
   "courses": [
     {
-      "id": "_iL775j",
-      "name": "Schnuppertauchen",
-      "instructor": "Maximilian Tiefgang",
+      "id": "_iL775a",
+      "name": "Tauchen",
+      "instructor": "Maximilian Trenker",
       "dates": [
         {
           "begin": "2024-11-13T17:00:00",
@@ -17,9 +17,25 @@
       "eventLocationId": 1
     },
     {
-      "id": "_iL775i",
+      "id": "_iL775a",
+      "name": "Tauchen",
+      "instructor": "Tanja Mayer",
+      "dates": [
+        {
+          "begin": "2025-01-03T17:00:00",
+          "end": "2025-01-03T19:00:00"
+        },
+        {
+          "begin": "2025-01-15T17:00:00",
+          "end": "2025-01-15T19:00:00"
+        }
+      ],
+      "eventLocationId": 1
+    },
+    {
+      "id": "_iL775b",
       "name": "Reiten",
-      "instructor": "Cowboy Tim",
+      "instructor": "Tim Lassenberger",
       "dates": [
         {
           "begin": "2024-11-13T17:00:00",
@@ -33,9 +49,25 @@
       "eventLocationId": 2
     },
     {
-      "id": "_iL775a",
+      "id": "_iL775b",
+      "name": "Reiten",
+      "instructor": "Nadja Bremer",
+      "dates": [
+        {
+          "begin": "2025-02-13T17:00:00",
+          "end": "2025-02-13T18:00:00"
+        },
+        {
+          "begin": "2025-02-23T17:00:00",
+          "end": "2025-02-23T18:00:00"
+        }
+      ],
+      "eventLocationId": 2
+    },
+    {
+      "id": "_iL775c",
       "name": "Yoga",
-      "instructor": "Manuela Ganzentspannt",
+      "instructor": "Manuela Mayer",
       "dates": [
         {
           "begin": "2024-11-13T17:00:00",
@@ -44,6 +76,22 @@
         {
           "begin": "2024-11-14T17:00:00",
           "end": "2024-11-14T19:00:00"
+        }
+      ],
+      "eventLocationId": 3
+    },
+    {
+      "id": "_iL775c",
+      "name": "Yoga",
+      "instructor": "Sebastian Reich",
+      "dates": [
+        {
+          "begin": "2025-01-30T17:00:00",
+          "end": "20245-01-30T19:00:00"
+        },
+        {
+          "begin": "2025-02-05T17:00:00",
+          "end": "2025-02-05T19:00:00"
         }
       ],
       "eventLocationId": 3
@@ -71,116 +119,60 @@
   ],
   "registrations": [
     {
-      "name": "Abel",
+      "name": "Sascha Brunner",
       "courseId": "_iL775a",
       "birthdate": "2024-12-01",
-      "email": "gl@gmail.com",
+      "email": "Sascha-Brunner@gmail.com",
       "newsletter": true,
       "id": 11
     },
     {
-      "name": "Katharina",
+      "name": "Katharina Scheibenglut",
       "courseId": "_iL775a",
       "birthdate": "2024-11-30",
-      "email": "Katharina@gmx.com",
+      "email": "Katharina-Schlut@gmx.com",
       "newsletter": false,
       "id": 12
     },
     {
-      "name": "Natalie",
-      "courseId": "_iL775j",
+      "name": "Natalie Sebesta",
+      "courseId": "_iL775b",
       "birthdate": "1992-07-24",
-      "email": "Natali@Natalie.com",
+      "email": "Nataliesebesta@gmx.com",
       "newsletter": true,
       "id": 13
     },
     {
-      "name": "Lukas Feuerball",
-      "courseId": "_iL775i",
+      "name": "Lukas Freniz",
+      "courseId": "_iL775c",
       "birthdate": "2017-01-01",
-      "email": "Lukas@lukas.com",
+      "email": "Lukas.Freniz@gmx.com",
       "newsletter": true,
       "id": 14
     },
     {
       "name": "Lena Berger",
-      "courseId": "_iL775i",
+      "courseId": "_iL775b",
       "birthdate": "2025-01-04",
-      "email": "Lena@Berger.com",
+      "email": "Lenaberg@gmx.com",
       "newsletter": false,
       "id": 15
     },
     {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": true,
-      "id": 16
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": false,
-      "id": 17
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": null,
-      "id": 18
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": false,
-      "id": 19
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": null,
-      "id": 20
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": null,
-      "id": 21
-    },
-    {
-      "name": "Lara",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": false,
-      "id": 22
-    },
-    {
-      "name": "Laraaaa",
-      "courseId": "_iL775j",
-      "birthdate": "2025-01-04",
-      "email": "Lara@gmail.com",
-      "newsletter": false,
-      "id": 23
-    },
-    {
       "name": "Katharina Brunner",
-      "courseId": "_iL775a",
+      "courseId": "_iL775c",
       "birthdate": "2025-01-04",
-      "email": "Katharina.Berger@gmx.at",
+      "email": "Katharina.Brunner@gmx.at",
       "newsletter": true,
       "id": 24
+    },
+    {
+      "name": "Natalie Kronstein",
+      "courseId": "_iL775b",
+      "birthdate": "1992-07-23",
+      "email": "Ntl.Kronstein@gmx.com",
+      "newsletter": true,
+      "id": 25
     }
   ]
 }
