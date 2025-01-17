@@ -1,46 +1,122 @@
-<table>
-    <thead>
-        <tr>
-            <th>Kurs</th>
-            <th>Veranstaltungsort</th>
-            <th>Adresse des Veranstaltungsortes</th>
-            <th>Öffentlich erreichbar?</th>
-            <th>Kursleiter</th>
-            <th>Alle Termine</th>
-          </tr>
-    </thead>
-      <tbody>
-        <tr *ngFor="let course of storeService.courses">
-            <td>{{course.name}}</td>
-            <td>{{course.eventLocation.name}}</td>
-            <td>{{course.eventLocation.address}}</td>
-            <td>{{course.eventLocation.venueByPublicTansport == true ? "Ja" : "Nein"}}</td>
-            <td>{{course.instructor}}</td>
-            <td>
-                <ul>
-                    <li *ngFor="let date of course.dates">
-                        <span>{{date.begin | date:"MMM dd, yyyy 'um' hh:mm a" }}</span> - <span>{{date.end | date:"MMM dd, yyyy 'um' hh:mm a"}}</span>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-      </tbody>
-</table>
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-lg-10 col-12 mb-4">
+      <!-- Filterbereich -->
+      <div>
+        <h5>Filteroptionen</h5>
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Nach Kurs suchen..." 
+              [(ngModel)]="filter.courseName" 
+              (input)="applyFilters()" 
+            />
+          </div>
+          <div class="col-12 col-md-4">
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Nach Kursleiter suchen..." 
+              [(ngModel)]="filter.instructorName" 
+              (input)="applyFilters()" 
+            />
+          </div>
+          <div class="col-12 col-md-4">
+            <input 
+              type="date" 
+              class="form-control" 
+              [(ngModel)]="filter.date" 
+              (change)="applyFilters()" 
+            />
+          </div>
+        </div>
+      </div>
 
-<table>
-    <thead>
-        <tr>
-            <th>Name</th>
-            <th>Geburtsdatum</th>
-            <th>Kurs</th>
-          </tr>
-    </thead>
-      <tbody>
-        <tr *ngFor="let registration of storeService.registrations">
-            <td>{{registration.name}}</td>
-            <td>{{registration.birthdate}}</td>
-            <td>{{registration.course.name}}</td>
-        </tr>
-      </tbody>
-</table>
-<button [ngClass]="page == storeService.currentPage ? 'active' : ''" (click)="selectPage(page)" type="button" *ngFor="let page of returnAllPages()">{{page}}</button>
+      <!-- Tabelle der Kurse -->
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th (click)="changeSorting('name')">Kurs
+                <span *ngIf="sortKey === 'name'">
+                  {{ sortOrder === 'asc' ? '▲' : '▼' }}
+                </span>
+              </th>
+              <th>Veranstaltungsort</th>
+              <th>Adresse</th>
+              <th>Erreichbarkeit</th>
+              <th (click)="changeSorting('instructor')">Kursleiter/in
+                <span *ngIf="sortKey === 'instructor'">
+                  {{ sortOrder === 'asc' ? '▲' : '▼' }}
+                </span>
+              </th>
+              <th (click)="changeSorting('dates')">Termine
+                <span *ngIf="sortKey === 'dates'">
+                  {{ sortOrder === 'asc' ? '▲' : '▼' }}
+                </span>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let course of filteredCourses">
+              <td data-label="Kurs">{{ course.name }}</td>
+              <td data-label="Veranstaltungsort">{{ course.eventLocation.name }}</td>
+              <td data-label="Adresse">{{ course.eventLocation.address }}</td>
+              <td data-label="Erreichbarkeit">{{ course.eventLocation.venueByPublicTansport ? 'Ja' : 'Nein' }}</td>
+              <td data-label="Kursleiter/in">{{ course.instructor }}</td>
+              <td data-label="Termine">
+                <ul>
+                  <li *ngFor="let date of course.dates">
+                    {{ date.begin | date: 'dd. MMM yyyy, HH:mm' }} - {{ date.end | date: 'HH:mm' }}
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tabelle der Registrierungen -->
+    <div class="col-12 col-lg-10 mb-4">
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>Teilnehmer/in</th>
+              <th>Geburtsdatum</th>
+              <th>Gewählter Kurs</th>
+              <th>E-Mail</th>
+              <th>Newsletter</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let registration of storeService.registrations">
+              <td data-label="Teilnehmer/in">{{ registration.name }}</td>
+              <td data-label="Geburtsdatum">{{ registration.birthdate }}</td>
+              <td data-label="Gewählter Kurs">{{ registration.course.name }}</td>
+              <td data-label="E-Mail">{{ registration.email }}</td>
+              <td data-label="Newsletter">{{ registration.newsletter ? 'Ja' : 'Nein' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Paginierung -->
+    <div class="col-12 text-center">
+      <button
+        [ngClass]="page === pageNumber ? 'active' : ''"
+        (click)="selectPage(pageNumber)"
+        type="button"
+        class="btn btn-outline-primary mx-1"
+        *ngFor="let pageNumber of returnAllPages()"
+      >
+        {{ pageNumber }}
+      </button>
+    </div>
+  </div>
+</div>
+

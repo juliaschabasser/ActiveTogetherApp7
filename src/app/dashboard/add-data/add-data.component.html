@@ -1,11 +1,96 @@
-<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form">
     <h2>Zum Kurs anmelden!</h2>
-    <input placeholder="Name" type="input" formControlName="name"><br />
-    <input placeholder="Geburtsdatum" type="date" formControlName="birthdate"><br />
-    <select formControlName="courseId">
-        <option value="" disabled>Bitte auswählen</option>
-        <option *ngFor="let course of storeService.courses" [ngValue]="course.id">{{course.name}}, {{course.instructor}}</option>
-    </select>
+  
+    <!-- Name Input -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Name</mat-label>
+      <input matInput placeholder="Name" formControlName="name" required minlength="2" maxlength="100" />
+      <mat-error *ngIf="registrationForm.get('name')?.hasError('required')">
+        Name ist erforderlich.
+      </mat-error>
+      <mat-error *ngIf="registrationForm.get('name')?.hasError('minlength')">
+        Der Name muss mindestens 2 Zeichen lang sein.
+      </mat-error>
+      <mat-error *ngIf="registrationForm.get('name')?.hasError('maxlength')">
+        Der Name darf maximal 100 Zeichen lang sein.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Birthdate Input -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Geburtsdatum</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthdate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="registrationForm.get('birthdate')?.hasError('required')">
+        Geburtsdatum ist erforderlich.
+      </mat-error>
+    </mat-form-field>
+  
+    <!-- Course Dropdown -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Kurs</mat-label>
+      <mat-select formControlName="courseId">
+        <mat-option value="" disabled>Bitte auswählen</mat-option>
+        <mat-option *ngFor="let course of storeService.courses" [value]="course.id">
+          {{ course.name }} - {{ course.instructor }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="registrationForm.get('courseId')?.hasError('required')">
+        Kurs ist erforderlich.
+      </mat-error>
+    </mat-form-field>
 
-    <button type="submit">Erfassen</button>
-</form>
+     <!-- Email Input -->
+  <mat-form-field appearance="fill" class="form-field">
+    <mat-label>Email</mat-label>
+    <input matInput placeholder="Email" formControlName="email" type="email" />
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('required')">
+      Email ist erforderlich.
+    </mat-error>
+    <mat-error *ngIf="registrationForm.get('email')?.hasError('email')">
+      Bitte eine gültige Email-Adresse eingeben.
+    </mat-error>
+  </mat-form-field>
+
+    <!-- Newsletter Checkbox -->
+  <mat-checkbox formControlName="newsletter">
+    Möchten Sie den Newsletter für neue Kursangebote erhalten?
+  </mat-checkbox>
+  
+    <!-- Submit Button -->
+    <div class="form-actions">
+      <button mat-raised-button color="primary" type="submit" [disabled]="!registrationForm.valid">
+        Erfassen
+      </button>
+    </div>
+  </form>
+  
+  <p class="data-processing-info">
+    Nach Absenden des Formulars erhalten Sie eine Terminbestätigung per E-Mail. Ihre Daten werden sicher gespeichert und nicht an Dritte weitergegeben.
+  </p>
+
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="successfulRegistration" tabindex="-1" role="dialog" 
+  [ngClass]="{'show': isModalVisible}" 
+  (click)="closeModal()" *ngIf="isModalVisible">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Erfolgreiche Registrierung</h5>
+      </div>
+      <div class="modal-body">
+        <p>Sie haben sich erfolgreich zum Kurs angemeldet!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">Schließen</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

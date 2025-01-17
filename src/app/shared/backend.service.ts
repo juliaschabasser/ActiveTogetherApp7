@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { StoreService } from './store.service';
 import { Course } from './Interfaces/Course';
 import { Registration } from './Interfaces/Registration';
+import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +28,7 @@ export class BackendService {
       }
     };
 
-    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=2`, options).subscribe(data => {
+    this.http.get<Registration[]>(`http://localhost:5000/registrations?_expand=course&_page=${page}&_limit=3`, options).subscribe(data => {
       this.storeService.registrations = data.body!;
       this.storeService.registrationTotalCount = Number(data.headers.get('X-Total-Count'));
     });
@@ -37,4 +39,21 @@ export class BackendService {
       this.getRegistrations(page);
     })
   }
+
+  public checkDuplicateRegistration(name: string, email: string, courseId: string) {
+    return this.http.get<Registration[]>('http://localhost:5000/registrations').pipe(
+      map((registrations: Registration[]) => {
+        console.log('Alle Registrierungen:', registrations);
+        const isDuplicate = registrations.some(
+          (registration: Registration) =>
+            registration.name.trim().toLowerCase() === name.trim().toLowerCase() && // String-Vergleich für Name
+            registration.email.trim().toLowerCase() === email.trim().toLowerCase() && // String-Vergleich für E-Mail
+            registration.courseId.toString() === courseId // Direkter String-Vergleich für courseId
+        );
+        console.log('Duplikat gefunden:', isDuplicate);
+        return isDuplicate;
+      })
+    );
+  }
+  
 }
